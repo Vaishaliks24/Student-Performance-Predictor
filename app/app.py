@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import os
+import matplotlib.pyplot as plt
 
 # Load model safely
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,3 +34,10 @@ if st.button("Predict"):
     prediction = model.predict(input_df)
 
     st.success(f"Predicted Final Grade (G3): {prediction[0]:.2f}")
+
+importances = model.named_steps['regressor'].feature_importances_
+features = model.feature_names_in_
+
+plt.bar(features, importances)
+plt.xticks(rotation=45)
+st.pyplot(plt)
