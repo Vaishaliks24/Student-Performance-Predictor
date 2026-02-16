@@ -53,4 +53,19 @@ The model is deployed using Streamlit for an interactive web interface.
 ---
 
 ## 📂 Project Structure
+student-performance-ml/
+│
+├── app/
+│ └── app.py
+│
+├── src/
+│ └── train.py
+│
+├── models/
+│ └── student_model.pkl
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+
 
